@@ -1,0 +1,34 @@
+
+    <div class="container">
+        <!-- Section haut-gauche -->
+        <div class="top-left">
+			<a href="routeur.php?controleur=membre&action=afficherProfil&id=<?php echo $id; ?>">
+				<?php 
+					$image = $membre->getPhoto(); 
+				?>
+				<div id="avatar-container">
+					<img src="./source/photoprofil/<?php echo $image; ?>" alt="ImageGroupe" id="Image-groupe">
+				</div>
+				
+				 <!--<img src="./source/photoprofil.png" alt="PhotoProfil" id="Photo-profil"> -->
+				<p><strong><?php echo $nom; ?><br> <?php echo $prenom; ?></strong></p>
+            </a>
+			<a href="routeur.php?controleur=notification&action=afficherNotifications&id=<?php echo $id; ?>">
+				<img src="./source/notification.png" alt="Notification" id="Notification">
+			</a>
+        </div>
+
+        <!-- Section haut-droit -->
+        <div class="top-right">
+			
+        </div>
+
+        <!-- Section bas-gauche -->
+        <div class="bottom-left">
+            <div class="search-container">
+                <input type="text" class="search-bar">
+                <a href="./pageDeDiscussion.html" id="Cherche-link">
+                    <img src="./source/cherche.png" alt="Cherche" id="Cherche">
+                </a>
+            </div>
+            <div class="les-goupes-container">

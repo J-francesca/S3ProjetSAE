@@ -1,0 +1,159 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5ecde; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    text-align: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10; 
+}
+
+.back-button button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.back-button button:hover {
+    background-color: #e79317;
+    border-radius: 5px;
+}
+
+.icon-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+.profil-wrapper {
+    width: 100%;
+    max-width: 800px;
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+.profil-wrapper h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px; 
+}
+
+.profil-container {
+    width: 80%; 
+    max-width: 800px;
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.photo-profil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profil-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profil-details li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.profil-details li strong {
+    color: #333;
+}
+
+.btnModifierProfil {
+    display: inline-block;
+    background-color: #eaa643;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btnModifierProfil:hover {
+    background-color: #e79317;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #333;
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+
+.btnDeconnecter {
+    display: inline-block;
+    background-color: #eaa643; 
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btnDeconnecter:hover {
+    background-color: #e79317; 
+}
+
+.btnDeconnecter:active {
+    transform: scale(0.98); 
+}
+
+
+
+
+@media (max-width: 600px) {
+    .profil-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profil-wrapper h1 {
+        font-size: 1.8em;
+    }
+
+    .photo-profil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profil-details li {
+        font-size: 1em;
+    }
+
+    .btnModifierProfil {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}

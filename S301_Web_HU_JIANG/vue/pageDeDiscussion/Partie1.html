@@ -1,0 +1,59 @@
+
+    <div class="container">
+        <!-- Section haut-gauche -->
+        <div class="top-left">
+			<a href="routeur.php?controleur=membre&action=afficherProfil&id=<?php echo $id; ?>">
+				<?php 
+					$image = $membre->getPhoto(); 
+				?>
+				<div id="avatar-container">
+					<img src="./source/photoprofil/<?php echo $image; ?>" alt="ImageGroupe" id="Image-groupe">
+				</div>
+				
+				<!--<img src="./source/photoprofil.png" alt="PhotoProfil" id="Photo-profil"> -->
+				<p><strong><?php echo $nom; ?><br> <?php echo $prenom; ?></strong></p>
+            </a>
+			<a href="routeur.php?controleur=notification&action=afficherNotifications&id=<?php echo $id; ?>">
+				<img src="./source/notification.png" alt="Notification" id="Notification">
+			</a>
+		</div>
+
+        <!-- Section haut-droit -->
+        <div class="top-right">
+			<div class="left-group">
+				<?php 
+					$image = $groupe->getImageGroupe(); 
+				?>
+				<div id="avatar-container">
+					<img src="./source/avatarGroupe/<?php echo $image; ?>" alt="ImageGroupe" id="Image-groupe">
+				</div>
+				<p><strong><?php echo $nGroupe; ?></strong></p>
+			</div>
+			<div class="right-group">
+				<?php
+				// Vérifier si le rôle est égal à 1, 2 ou 3
+				if ($role == 1 || $role == 2 || $role == 3) {
+				?>
+					<a href="routeur.php?controleur=signalement&action=listeSignalement&id=<?php echo $id; ?>&idG=<?php echo $idGroupe; ?>">
+						<img src="./source/signalement.png" alt="Signalement" id="Signalement">
+					</a>
+				<?php
+				}
+				?>
+				
+				<img src="./source/filtre.png" alt="Filtre" id="Filtre">
+				<a href="routeur.php?controleur=parametre&action=lireParametre&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>">
+					<img src="./source/plus.png" alt="Plus" id="Plus">
+				</a>
+			</div>
+        </div>
+
+        <!-- Section bas-gauche -->
+        <div class="bottom-left">
+            <div class="search-container">
+                <input type="text" class="search-bar">
+                <a href="./pageDeDiscussion.html" id="Cherche-link">
+                    <img src="./source/cherche.png" alt="Cherche" id="Cherche">
+                </a>
+            </div>
+            <div class="les-goupes-container">

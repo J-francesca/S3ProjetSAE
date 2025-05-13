@@ -1,0 +1,36 @@
+    <?php if (isset($_SESSION['erreur'])): ?>
+			<div class="error-message">
+				<?= htmlspecialchars($_SESSION['erreur']) ?>
+			</div>
+			<?php unset($_SESSION['erreur']); endif; ?>
+
+			<?php if (isset($_SESSION['success'])): ?>
+				<div class="success-message">
+					<?= htmlspecialchars($_SESSION['success']) ?>
+				</div>
+			<?php unset($_SESSION['success']); endif; ?>
+	
+	
+	<div class="back-button">
+		<button onclick="window.history.back()">
+			<img src="./source/retour.png" alt="Retour" id="Retour">
+		</button>
+	</div>
+	<div class="container">
+		<p class="titre">Ajouter une nouvelle proposition</p>
+		<form action="routeur.php?controleur=proposition&action=traiterProposition&idMembre=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>" method="POST">
+		<div style="display: flex; flex: 1;">
+		<div class="content-left">
+			<div class="element1">
+				<p>Titre:</p>
+				<input type="text" id="titreInput" name="titre" required>
+			</div>
+			<div class="element2">
+				<p>Description:</p>
+				<textarea type="text" id="descriptionInput" name="description" required></textarea>
+			</div>
+		</div>
+		<div class="content-right">
+			<select class="toggle-select" id="toggleSelect" name="theme" required>
+			<option value="" disabled selected>Thème concerné</option>
+						

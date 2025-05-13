@@ -1,0 +1,149 @@
+
+body {
+    background-color: #f5ecde;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 70px;  
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="color"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.themes-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.theme-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.theme-item input[type="text"],
+.theme-item input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.theme-item input[type="text"] {
+    flex: 2;
+}
+
+.theme-item input[type="number"] {
+    flex: 1;
+}
+
+.theme-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #eaa643;
+    color: white;
+    cursor: pointer;
+}
+
+.theme-item button:hover {
+    background-color: #e79317;
+}
+
+.btn-submit {
+    background-color: #eaa643;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #e79317;
+}
+
+
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ffebee;
+    border-radius: 4px;
+}
+
+
+
+
+
+.back-button {
+    position: fixed;
+    top: 20px; 
+    left: 20px; 
+    z-index: 10; 
+}
+
+.back-button button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.back-button button:hover {
+    background-color: #f2d5a9; 
+    border-radius: 5px;
+}
+
+.icon-arrow {
+    width: 30px; 
+    height: 30px; 
+}
+
+
+
+
+.image-preview-container {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    margin-top: 10px;
+    border: 2px solid #eaa643; 
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}

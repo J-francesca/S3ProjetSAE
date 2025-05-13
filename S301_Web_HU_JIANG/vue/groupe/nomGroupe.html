@@ -1,0 +1,17 @@
+		<div class="nomGroupe">
+			<h1>Modifier le nom du groupe</h1>
+			
+			<p>Les autres membres du groupe seront informés une fois que le nom du groupe aura été modifié.</p>
+			
+			<form action="routeur.php?controleur=groupe&action=traiterNomGroupe&idMembre=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>" method="POST">
+
+				<div class="element1">
+					<p>Nom du groupe:</p>
+					<input type="text" id="nomGroupe" name="nomGroupe" placeholder="<?php echo $groupe->getNomGroupe(); ?>" required>
+				</div>
+				<div class="element2">
+					<button type="submit">Modifier</button>
+				</div>
+			
+			</form>
+		</div>

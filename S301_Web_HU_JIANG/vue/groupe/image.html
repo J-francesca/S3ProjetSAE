@@ -1,0 +1,24 @@
+		<div class="image">
+			<h1>Définir l'image du groupe</h1>
+			<p>Choisir une image que vous convient pour votre groupe.</p>
+			
+			<div id="avatar-container">
+				<?php 
+					$image = $groupe->getImageGroupe(); 
+				?>
+				<img id="avatarImage" src="https://projets.iut-orsay.fr/saes3-shu/S301_Web_HU_JIANG/source/avatarGroupe/<?php echo $image; ?>" alt="Avatar de groupe">
+			</div>
+			
+			<form action="routeur.php?controleur=groupe&action=changerImage&idMembre=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>" method="POST" enctype="multipart/form-data">
+				<div class="element1">
+					<input type="file" id="fileInput" name="avatar" accept="image/*">
+				</div>
+				<div class="element2">
+					<button type="submit">Modifier</button>
+				</div>
+			</form>
+			
+		</div>
+		
+
+

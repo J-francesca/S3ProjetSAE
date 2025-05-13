@@ -1,0 +1,69 @@
+
+        </div>
+    </div>
+
+	 <script>
+	 
+		document.addEventListener("DOMContentLoaded", function() {
+			// Vérifier si une modale d'erreur doit être affichée
+			var modalErreur = document.getElementById("modalErreur");
+			if (modalErreur) {
+				modalErreur.style.display = "flex"; // Afficher la modale d'erreur
+				
+				// Après 2 secondes, fermer la modale d'erreur automatiquement
+				setTimeout(function() {
+					closeModal("modalErreur"); // Fermer la modale d'erreur
+				}, 2000); // 2 secondes pour laisser le temps à l'utilisateur de la voir
+			}
+
+			// Ouvrir la modale de confirmation pour quitter le groupe
+			document.getElementById('quitterGroupeBtn').addEventListener('click', function() {
+				document.getElementById('modalConfirmation').style.display = 'flex';
+			});
+		});
+
+		// Fermer une modale en passant son ID
+		function closeModal(modalId) {
+			var modal = document.getElementById(modalId);
+			if (modal) {
+				modal.style.display = 'none';
+			}
+		}
+
+		// Confirmer la suppression (quitter le groupe)
+		function confirmerQuitter() {
+			document.getElementById('formQuitterGroupe').submit(); // Soumettre le formulaire de confirmation
+		}
+
+		// Fermer la modale de confirmation (quitter le groupe)
+		function fermerModal() {
+			document.getElementById('modalConfirmation').style.display = 'none';
+		}
+		
+		function checkOnlyOne(checkbox) {
+			// Désélectionne toutes les cases cochées
+			const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+			checkboxes.forEach(cb => {
+				if (cb !== checkbox) {
+					cb.checked = false;
+				}
+			});
+		}
+		
+		// Récupère l'élément d'entrée de fichier et l'élément d'image
+        const fileInput = document.getElementById('fileInput');
+        const avatar = document.getElementById('avatarImage');
+
+        // Ajoute un écouteur d'événements pour le changement de fichier
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];  // Récupère le fichier sélectionné
+            if (file) {
+                const reader = new FileReader();  // Crée un objet FileReader
+                reader.onload = function(e) {
+                    avatar.src = e.target.result;  // Met à jour la source de l'image avec la nouvelle image téléchargée
+                };
+                reader.readAsDataURL(file);  // Lit le fichier comme une URL de données
+            }
+        });
+
+    </script>

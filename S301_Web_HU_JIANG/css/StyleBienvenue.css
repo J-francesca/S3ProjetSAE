@@ -1,0 +1,157 @@
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+.gradient-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh; 
+    background: linear-gradient(to bottom, #eaa643, white); 
+    margin: 0; 
+    flex-wrap: wrap; 
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 5%;
+    max-width: 50%; 
+    box-sizing: border-box;
+}
+
+.left-panel h1 {
+    font-size: 4vw; 
+    font-family: 'Arial', sans-serif;
+}
+
+.left-panel p {
+    font-size: 2vw; 
+    font-family: 'Arial', sans-serif;
+    margin-top: 2vh;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    max-width: 60%; 
+    box-sizing: border-box;
+}
+
+.intro-image {
+    width: 100%; 
+    max-width: 100%;
+    height: auto;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.logo img {
+    width: 7vw; 
+    height: 7vw;
+}
+
+.buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.btn:hover {
+    background-color: #f1f1f1;
+}
+
+
+@media (max-width: 768px) {
+    .gradient-container {
+        flex-direction: column; 
+        height: auto;
+    }
+
+    .left-panel {
+        max-width: 100%;
+        text-align: center;
+        font-size: 4vw; 
+    }
+
+    .right-panel {
+        max-width: 100%;
+        margin-top: 20px; 
+    }
+
+    .intro-image {
+        width: 100%;
+        height: auto; 
+    }
+
+    .logo img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .buttons {
+        position: static; 
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-panel {
+        max-width: 100%; 
+        text-align: center; 
+    }
+
+    .right-panel {
+        max-width: 100%; 
+        margin-top: 15px;
+    }
+
+    .intro-image {
+        width: 100%; 
+        height: auto;
+    }
+
+    .buttons {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%; 
+        padding: 10px;
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,30 @@
+		<div class="couleur">
+			<h1>Définir la couleur du groupe</h1>
+			<p>Choisir une couleur que vous convient pour votre groupe.</p>
+			
+			<form action="routeur.php?controleur=groupe&action=changerCouleur&idMembre=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>" method="POST">
+
+				<div class="element1">
+					<div class = "listeCouleur">
+						<label class="color-label" data-color="#cedaf2">
+							<input type="radio" name="couleurGroupe" value="#cedaf2" required>
+						</label>
+						<label class="color-label" data-color="#f9d1c5">
+							<input type="radio" name="couleurGroupe" value="#f9d1c5" required>
+						</label>
+						<label class="color-label" data-color="#c2dc5b">
+							<input type="radio" name="couleurGroupe" value="#c2dc5b" required>
+						</label>
+						<label class="color-label" data-color="#ffff4d">
+							<input type="radio" name="couleurGroupe" value="#ffff4d" required>
+						</label>
+					</div>
+				</div>
+				<div class="element2">
+					<button type="submit">Valider</button>
+				</div>
+			
+			</form>
+		</div>
+		
+

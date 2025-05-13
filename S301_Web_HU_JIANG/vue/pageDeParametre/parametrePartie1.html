@@ -1,0 +1,21 @@
+	<?php if (isset($_SESSION['message'])): ?>
+		<div class="modal" id="modalErreur">
+			<div class="modal-content">
+				<p id="messageErreur"><?php echo $_SESSION['message']; ?></p>
+			</div>
+		</div>
+
+		<!-- Vider la session après affichage -->
+		<?php unset($_SESSION['message']); ?>
+	<?php endif; ?>
+    <div class="container">
+        <div class="left">
+            <div class="vertical-div">
+				<a href="routeur.php?controleur=discussion&action=lireDiscussionAvecPropositions&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>">
+					<img src="./source/retour.png" alt="Retour" id="Retour">
+				</a>
+                <p><strong>Groupe( <?php echo $nbMembre; ?> )</strong></p>
+            </div>
+            <div class="vertical-div">
+				
+				

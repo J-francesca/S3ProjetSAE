@@ -1,0 +1,91 @@
+					<div id="avatar">
+						<a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=inviterMembre&classe=membre&ext=php">
+							<img src="./source/ajout.png" alt="Ajout" id="Ajout">
+						</a>
+					</div>
+					<div id="avatar">
+						<a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=listeMembre&classe=membre&ext=php">
+							<img src="./source/retrait.png" alt="Retrait" id="Retrait">
+						</a>
+					</div>
+				
+            </div>
+            <div class="vertical-div">
+                <div>
+					<p>Nom du groupe</p>
+					<a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=nomGroupe&classe=groupe&ext=html">
+						<p class="symbole">></p>
+					</a>
+                </div>
+				<div>
+                    <p>Image du groupe</p>
+                    <a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=image&classe=groupe&ext=html">
+						<p class="symbole">></p>
+					</a>
+                </div>
+                <div>
+                    <p>Couleur du groupe</p>
+                    <a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=couleur&classe=groupe&ext=html">
+						<p class="symbole">></p>
+					</a>
+                </div>
+                <div>
+                    <p>Gestion du groupe</p>
+                    <a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=gestionGroupe&classe=groupe&ext=html">
+						<p class="symbole">></p>
+					</a>
+                </div>
+                <div>
+                    <p>Notifications</p>
+                    <a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>">
+						<p class="symbole">></p>
+					</a>
+                </div>
+                <div>
+                    <p>Thèmes</p>
+                    <a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=themesGroupe&classe=groupeTheme&ext=php">
+						<p class="symbole">></p>
+					</a>
+                </div>
+                <div>
+                    <p>Budget</p>
+					<?php
+						$idM = $_GET['id']; 
+						$idG = $_GET['idGroupe']; 
+						$role = Participation::getRoleByIds($idM, $idG);
+						if($role == 3) {
+						?>
+							<a href="routeur.php?controleur=decideur&action=afficherPropositionsParGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>">
+								<p class="symbole">></p>
+							</a>
+						<?php
+						}else{
+						?>
+							<a href="routeur.php?controleur=parametre&action=lireParametreGroupe&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>&parametre=accesInterdit&classe=pageDeParametre&ext=html">
+								<p class="symbole">></p>
+							</a>
+						<?php
+						}
+					?>
+                    
+                </div>
+            </div>
+			<div class="vertical-div">
+				<form id="formQuitterGroupe" action="routeur.php?controleur=membre&action=supprimerCompte&id=<?php echo $id; ?>&idGroupe=<?php echo $idGroupe; ?>" method="POST">
+					<button type="button" id="quitterGroupeBtn">Quitter</button>
+				</form>
+			</div>
+			
+			<div id="modalConfirmation" class="modal">
+				<div class="modal-content">
+					<h3>Confirmer l'action</h3>
+					<p>Êtes-vous sûr de vouloir quitter ce groupe ?</p>
+					<div class="modal-buttons">
+						<button class="confirm" onclick="confirmerQuitter()">Oui</button>
+						<button class="cancel" onclick="fermerModal('modalConfirmation')">Non</button>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="right">
+            

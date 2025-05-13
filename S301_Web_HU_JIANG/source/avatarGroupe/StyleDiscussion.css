@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 20% 80%;
+    height: 100vh;
+}
+
+
+a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+	color:  black;
+}
+
+a:hover {
+  color:  black;
+}
+
+a:visited {
+  color:  black;
+}
+
+a:active {
+  color:  black;
+}
+
+img {
+	cursor: pointer; 
+}
+	
+.top-left {
+    background-color: #e79317; /* Couleur d'arrière-plan */
+    display: flex; /* Active Flexbox pour organiser les éléments horizontalement */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    padding: 20px; /* Ajoute de l'espace autour des contenus */
+}
+
+.top-left a {
+    display: flex; /* Aligne la photo et le texte sur la même ligne */
+    align-items: center; /* Centre verticalement la photo et le texte */
+    gap: 10px; /* Ajoute un espacement entre la photo et le texte */
+    text-decoration: none; /* Supprime les soulignements */
+    color: inherit; /* Conserve la couleur du texte */
+}
+
+#Photo-profil {
+    width: 80px; /* Taille de l'image */
+    height: 80px;
+    border-radius: 50%; /* Rendre l'image circulaire */
+}
+
+#Notification {
+    width: 60px; /* Taille de l'icône de notification */
+    height: 60px;
+    margin-left: auto; /* Pousse la notification complètement à droite */
+}
+
+.top-left p {
+    font-size: 25px; /* Taille du texte */
+    margin: 0; /* Supprime les marges par défaut */
+    font-family: Arial, sans-serif; /* Police de caractères */
+}
+
+
+.bottom-left {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+	overflow-y: auto; /* Permet un défilement vertical */
+	overflow-x: hidden;
+	scrollbar-width: thin;
+}
+
+
+
+.search-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #ccc;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+#Cherche-link {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+#Cherche {
+    width: 40px;
+    height: 40px;
+}
+
+.creer-groupe-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end; 
+    width: 100%; 
+    height: 100%; 
+    margin-top: 10px; 
+	margin-left: 20px; 
+}
+
+.lesGroupes{
+	display: flex;            
+    justify-content: flex-start;  
+    align-items: center;      
+	gap: 20px;  
+	cursor: pointer;                 
+    transition: background-color 0.3s;
+	width: auto;                      
+    white-space: nowrap;              
+}
+
+.lesGroupes:hover {
+	background-color: #f0f0f0;       /* Change la couleur de fond au survol */
+}
+
+.lesGroupes.active {
+    background-color: #eaa643;       /* Change la couleur du div quand il est cliqué */
+    color: white;                    /* Change la couleur du texte à blanc */
+}
+
+
+
+
+.groupe p, .left-group p{
+	font-size: 20px;
+    font-family: Arial, sans-serif; 
+}
+
+
+#Creer-groupe {
+    width: 60px;
+    height: 60px;
+	margin-bottom: 30px;          
+    margin-right: 40px; 
+	position: sticky; /* Cela fixe l'image */
+	top: 30px; 
+    left: 30px; 
+    z-index: 10; /* Garde l'image au-dessus des autres éléments */
+}
+
+
+.top-right {
+    background-color: #eaa643;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Groupe gauche : image + texte */
+.left-group {
+    display: flex;
+    align-items: center; 
+}
+
+.left-group p {
+    margin: 0; 
+    padding-left: 15px; 
+    font-size: 16px; 
+}
+
+/* Groupe droit : filtre + plus */
+.right-group {
+    display: flex; 
+    align-items: center; 
+}
+/*
+#Image-groupe {
+    width: 80px;
+    height: 80px;
+    
+}
+*/
+
+#avatar-container {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#Image-groupe{
+	width: 100%;
+	height: 100%;
+	object-fit: center;
+	object-position: center; 
+}
+
+
+
+#Signalement{
+	width: 50px;
+    height: 50px;
+	margin-right: 15px; 
+	
+}
+	
+
+#Filtre {
+    width: 50px;
+    height: 50px;
+	margin-right: 15px; 
+	
+}
+
+#Plus {
+    width: 60px;
+    height: 60px;
+}
+
+.bottom-right {
+    background-color: #f5ecde;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;  
+    text-align: center;
+    height: 100%;
+	overflow-y: auto; /* Permet un défilement vertical */
+	overflow-x: hidden;
+	scrollbar-width: thin; /* Définit une barre fine */
+}
+
+
+
+.les-goupes-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 15px;               
+    width: 100%;             
+    padding: 20px;           
+}
+
+
+
+
+.groupe {
+    display: flex;               
+    justify-content: flex-start;  
+    align-items: center;     
+    gap: 10px;
+}
+
+
+
+.les-propositions-container {
+    display: flex;
+    flex-direction: wrap;
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur plusieurs lignes */
+}
+
+.proposition {
+    flex: 1 1 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    /*background-color: #e2e3e5;*/
+    text-align: center;
+    padding: 10px;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+
+.proposition .Partie1 {
+    display: flex;               
+    justify-content: flex-start;  
+    align-items: center;      
+    gap: 10px;                 
+}
+
+.proposition .Partie1 p{
+	font-size: 15px;
+    font-family: Arial, sans-serif; 
+}
+
+
+.proposition .Partie2{
+	margin: 10px 0; 
+    padding: 10px;  
+    width: 200px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;     
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour chaque élément */
+	align-items:center;
+}
+
+
+.proposition .Partie2 p{
+	font-size: 12px;
+    font-family: Arial, sans-serif; 
+	align-items:center;
+
+}
+
+
+.les-propositions-container a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+	color: black;
+}
+
+
+.ajouter-proposition-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

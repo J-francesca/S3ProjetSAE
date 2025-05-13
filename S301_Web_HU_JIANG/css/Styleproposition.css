@@ -1,0 +1,471 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5ecde;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.back-button button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-arrow {
+    width: 40px; 
+    height: 40px;
+    transform: rotate(180deg); 
+}
+
+.back-button button:hover .icon-arrow {
+    transform: rotate(180deg) scale(1.2); 
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.proposition-header, .comments, .add-comment, .vote-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.proposition-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.author-info {
+    font-style: italic;
+    color: #777;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.metrics span {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.details span {
+    margin-right: 20px;
+}
+
+.details span:first-child {
+    margin-right: 30px; 
+}
+
+.argumentation {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.comment {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.commentaire-container {
+    display: flex;
+    flex-direction: column; 
+    position: relative; 
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    height: auto;
+    min-height: 80px;
+}
+
+
+.commentaire-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; }
+
+.photo-profil {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.commentaire-name {
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: #333; 
+
+}
+
+.commentaire-stats {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.like-button, .dislike-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+
+.like-button.active {
+    background-color: #FF8675;
+    color: white;
+    border-color: #FF8675;
+}
+
+.dislike-button.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.commentaire-stats span {
+    margin-left: 15px; 
+}
+
+.commentaire-body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-left: 45px; 
+    padding-right: 60px; 
+}
+
+.icon-delete {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #eaa643;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.vote-section button:hover {
+    background-color: #e79317;
+}
+
+
+
+.comment-metrics {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signalement {
+    color: #eaa643;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+.vote-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.vote-section button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #eaa643;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vote-section button:hover {
+    background-color: #e79317;
+}
+
+
+
+
+
+
+.signal-panel, #signalPanel, #signalPropPanel {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 400px;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.signal-panel h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.signal-panel textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.signal-panel textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.signal-panel button {
+    padding: 8px 16px;
+    margin: 0 8px 0 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.signal-panel button:first-of-type {
+    background-color: #eaa643;
+    color: white;
+}
+
+.signal-panel button:first-of-type:hover {
+    background-color: #e79317;
+}
+
+.signal-panel button:last-of-type {
+    background-color: #6c757d;
+    color: white;
+}
+
+.signal-panel button:last-of-type:hover {
+    background-color: #5a6268;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.proposition-header, .commentaire-container {
+    position: relative;
+}
+
+.proposition-header:hover::after, .commentaire-container:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.02);
+    pointer-events: none;
+}
+
+.signal-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 4px;
+    color: white;
+    background-color: #f5ecde;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; 
+    background-color: #eaa643; 
+    color: white; 
+    border: 2px solid #eaa643;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.btn:hover {
+    background-color: #eaa643; 
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+.btn-danger {
+    background-color: #eaa643;
+    border: 2px solid #eaa643;
+}
+
+.btn-danger:hover {
+    background-color: #e79317; 
+}
+
+.btn-warning {
+    background-color: #eaa643;
+    border: 2px solid #eaa643;
+}
+
+.btn-warning:hover {
+    background-color: #e79317;
+}
+
+
+.delete-button {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.icon-delete {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.photo-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.photo-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-input {
+    width: 100%;
+    max-width: 300px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:transparent;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .commentaire-stats {
+        position: static; 
+        margin-top: 10px; 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; 
+    }
+
+    .like-button, .dislike-button {
+        font-size: 12px; 
+        padding: 5px 8px; 
+        margin: 5px; 
+    }
+
+    .commentaire-container {
+        padding-bottom: 40px; 
+    }
+}
